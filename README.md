@@ -6,7 +6,7 @@
 <hr>
 <p>I read a lot of books but after I finish reading them I often don't remember all the most salient parts of the book. So I started taking notes. This project is built on this idea. The aim was to create a website where someone can store all the books they've read, their notes, ratings and when they were read. The books are sortable by rating, recency and title.</p>
 
-<h2> Objectives </h2>
+<h2> 🤝 Objectives </h2>
 <hr>
 <ul>
     <li> Integrate a public API to fetch book covers by their ISBN number. </li>
@@ -15,7 +15,7 @@
     </li>
 </ul>
 
-<h2> Built with... </h2>
+<h2> 🛠 Built with... </h2>
 <hr>
 <details>
   <summary>Client</summary>
@@ -38,7 +38,7 @@
   </ul>
 </details>
 
-<h2> Prerequisites </h2>
+<h2> ✨ Prerequisites </h2>
 <hr>
 <p> In order to run this project you need: </p>
 <ul>
