@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book Notes</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>BOOKS I'VE READ 📚</h1>
+        <a id="newPostBtn" href="/new">New Post</a>
+        <p>Welcome! 🤝 Here you can create detailed notes ✍ for each of the books you have ever read. Please note that when creating a new post we use the <strong>ISBN</strong> number to collect the cover for your book using an API. So be careful and make sure you are inserting the correct number.</p>
+        <p>Sorted with <strong>my top recommendations</strong> up top. Sort by:  <a href="/title">title</a>,  <a href="/newest">newest</a>,  or  <a href="/best">best</a></p>
+        <hr>
+        <ul id="postsList">
+          <% notes.forEach(note => { %>
+            <li class="book-item">
+              <% if (note.image) { %>
+                <img src="data:image/jpeg;base64,<%= note.image %>" alt="Book Cover">
+              <% } %>
+              <div class="content">
+                <h2>
+                  <%=note.title.toUpperCase()%> - BY <%=note.authors.toUpperCase()%>
+                </h2>
+                <small>
+                  DATE READ:📖 <%=new Date(note.date_read).toLocaleDateString()%>
+                </small>
+                <small>
+                  HOW STRONGLY I RECOMMEND IT:👍 <%=note.rating %>/10 
+                </small>
+                <p>
+                  <%=note.notes%>
+                </p>              
+                <a class="edit" href="/edit/<%= note.id %>">Edit</a>
+                <a class="delete" href="/delete/<%= note.id %>">Delete</a>
+              </div>
+            </li>
+          <% }); %>
+        </ul>
+    </div>     
+</body>
+</html>

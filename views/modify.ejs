@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Edit Book Note</title>
+    <link rel="stylesheet" href="/styles/main.css">
+</head>
+<body>
+    <div class="container">
+        <h1>
+          <%= heading %> ✍
+        </h1>
+    
+        <% if (locals.note) { %>
+          <form id="editForm" method="post" action="/edit/note/<%=note.id%>">
+            <input type="number" name="isbn" value="<%= note.isbn %>">
+            <input type="text" name="title" value="<%=note.title %>">
+            <input type="text" name="authors" value="<%= note.authors %>">
+            <input type="date" name="date_read" value="<%= note.date_read %>">
+            <input type="number" name="rating" value="<%= note.rating %>">
+            <textarea name="notes" rows="10"><%= note.notes %></textarea>            
+            <button class="full-width" type="submit">
+              <%= submit %>
+            </button>
+          </form>
+          <% } else {%>
+            <form id="newPostForm" method="post" action="/newBookEntry">
+              <input type="number" name="isbn" placeholder="Enter correct book ISBN number" required>            
+              <input type="text" name="title" placeholder="Enter book title" required>
+              <input type="text" name="authors" placeholder="Enter Author(s) name" required>
+              <input type="date" name="date_read" placeholder="Enter the date you finished reading" required>
+              <input type="number" name="rating" placeholder="Enter your book rating out of 10" min="0" max="10" required>
+              <textarea name="notes" placeholder="Write your notes here" required rows="10"></textarea>              
+              <button class="full-width" type="submit">
+                <%= submit %>
+              </button>
+            </form>
+            <% } %>
+    
+      </div>
+    
+</body>
+</html>
