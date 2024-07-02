@@ -1,5 +1,5 @@
 <div align="center">
-  <h3><b>Book Notes Application</b></h3>
+  <h1><b>Book Notes Application 📚</b></h1>
 </div>
 
 # 📗 Project Overview
