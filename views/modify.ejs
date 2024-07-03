@@ -13,6 +13,7 @@
         </h1>
     
         <% if (locals.note) { %>
+
           <form id="editForm" method="post" action="/edit/note/<%=note.id%>">
             <input type="number" name="isbn" value="<%= note.isbn %>">
             <input type="text" name="title" value="<%=note.title %>">
@@ -26,6 +27,7 @@
           </form>
 
           <% } else {%>
+
             <form id="newPostForm" method="post" action="/newBookEntry">
               <input type="number" name="isbn" placeholder="Enter correct book ISBN number" required>            
               <input type="text" name="title" placeholder="Enter book title" required>
@@ -37,6 +39,7 @@
                 <%= submit %>
               </button>
             </form>
+            
             <% } %>    
       </div>    
 </body>
