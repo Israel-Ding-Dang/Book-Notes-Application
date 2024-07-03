@@ -22,7 +22,7 @@
             <textarea name="notes" rows="10"><%= note.notes %></textarea>            
             <button class="full-width" type="submit">
               <%= submit %>
-            </button>
+            </button>            
           </form>
           <% } else {%>
             <form id="newPostForm" method="post" action="/newBookEntry">
@@ -36,9 +36,7 @@
                 <%= submit %>
               </button>
             </form>
-            <% } %>
-    
-      </div>
-    
+            <% } %>    
+      </div>    
 </body>
 </html>
