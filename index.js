@@ -114,8 +114,7 @@ app.get("/delete/:id", async (req, res) => {
 
 //Sorting books by title
 app.get("/title", async (req, res) => {        
-    const result = await db.query("SELECT * FROM book_notes ORDER BY title");
-    console.log(result.rows);
+    const result = await db.query("SELECT * FROM book_notes ORDER BY title");    
         
     // Convert each image buffer to base64
     const notes = result.rows.map(note => {        
@@ -148,7 +147,6 @@ app.get("/newest", async (req, res) => {
 app.get("/best", (req, res) => {
     res.redirect("/");
 });
-
 
 app.listen(port, () => {
     console.log(`Server is running on port ${port}`);
