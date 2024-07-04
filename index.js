@@ -16,10 +16,12 @@ const db = new pg.Client({
     port: process.env.PG_PORT,
 });
 
+
 db.connect();
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
+
 
 
 // Route to render the main page
