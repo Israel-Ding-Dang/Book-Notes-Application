@@ -49,10 +49,8 @@ app.get("/new", (req, res) => {
     });
 });
 
-
 //Route for creating a new post
-app.post("/newBookEntry", async (req, res) => {
-    
+app.post("/newBookEntry", async (req, res) => {    
     try {
         const { isbn, title, authors, date_read, rating, notes } = req.body;
 
