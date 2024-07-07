@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route to render the main page
 app.get("/", async (req, res) => {
-    
+
     try {
         const result = await db.query("SELECT * FROM book_notes ORDER BY rating DESC");
         console.log(result.rows);
@@ -44,10 +44,12 @@ app.get("/", async (req, res) => {
 
 //Route to render the form for creating a new book note
 app.get("/new", (req, res) => {
+
     res.render("modify.ejs", {
         heading: "New Book Entry",
         submit: "Create Book Note"
     });
+    
 });
 
 //Route for creating a new post
