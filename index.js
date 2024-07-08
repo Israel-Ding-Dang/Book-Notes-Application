@@ -121,7 +121,6 @@ app.get("/title", async (req, res) => {
         }
         return note;
     });
-
     res.render("index.ejs", { notes });    
 });
 
