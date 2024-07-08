@@ -48,8 +48,7 @@ app.get("/new", (req, res) => {
     res.render("modify.ejs", {
         heading: "New Book Entry",
         submit: "Create Book Note"
-    });
-    
+    });    
 });
 
 //Route for creating a new post
