@@ -66,8 +66,7 @@ app.post("/newBookEntry", async (req, res) => {
             res.redirect("/");
         } catch (error) {
             console.log("Error inserting book entry into database:", error);
-        }       
-
+        } 
     } catch (error) {
         console.log("Error fetching image cover from API:", error);             
     }
