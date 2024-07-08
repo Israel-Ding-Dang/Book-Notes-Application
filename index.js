@@ -23,7 +23,6 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route to render the main page
 app.get("/", async (req, res) => {
-
     try {
         const result = await db.query("SELECT * FROM book_notes ORDER BY rating DESC");
         console.log(result.rows);
@@ -93,7 +92,6 @@ app.post("/edit/note/:id", async (req, res) => {
         const { isbn, title, authors, date_read, rating, notes } = req.body;
         
         await db.query("UPDATE book_notes SET isbn = $1, title = $2, authors = $3, date_read = $4, rating = $5, notes = $6 WHERE id = $7;", [isbn, title, authors, date_read, rating, notes, id]);
-
         res.redirect("/");
     } catch (error) {
         console.log("Error sending notes to database:", error);        
