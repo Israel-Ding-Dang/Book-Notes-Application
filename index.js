@@ -23,6 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route to render the main page
 app.get("/", async (req, res) => {
+
     try {
         const result = await db.query("SELECT * FROM book_notes ORDER BY rating DESC");
         console.log(result.rows);
@@ -35,7 +36,8 @@ app.get("/", async (req, res) => {
             return note;
         });
 
-        res.render("index.ejs", { notes });       
+        res.render("index.ejs", { notes });   
+            
     } catch (error) {
         console.error("Error fetching book notes:", error);
     }
