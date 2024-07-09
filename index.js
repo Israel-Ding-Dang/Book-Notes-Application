@@ -17,10 +17,8 @@ const db = new pg.Client({
 });
 
 db.connect();
-
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
-
 // Route to render the main page
 app.get("/", async (req, res) => {
     try {
