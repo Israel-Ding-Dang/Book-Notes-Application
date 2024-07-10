@@ -23,7 +23,7 @@ app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route to render the main page
 app.get("/", async (req, res) => {
-    
+
     try {
         const result = await db.query("SELECT * FROM book_notes ORDER BY rating DESC");
         console.log(result.rows);
@@ -53,6 +53,7 @@ app.get("/new", (req, res) => {
 
 //Route for creating a new post
 app.post("/newBookEntry", async (req, res) => {    
+    
     try {
         const { isbn, title, authors, date_read, rating, notes } = req.body;
 
