@@ -32,6 +32,7 @@ app.get("/", async (req, res) => {
             if (note.image) {                
                 note.image = note.image.toString('base64');
             }
+            
             return note;
         });
 
