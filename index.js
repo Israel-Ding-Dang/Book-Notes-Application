@@ -8,7 +8,6 @@ const app = express();
 const port = 3000;
 env.config();
 
-
 const db = new pg.Client({    
     user: process.env.PG_USER,
     host: process.env.PG_HOST,
@@ -18,6 +17,7 @@ const db = new pg.Client({
 });
 
 db.connect();
+
 
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
