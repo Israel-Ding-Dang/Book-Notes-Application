@@ -18,12 +18,12 @@ const db = new pg.Client({
 
 db.connect();
 
-
 app.use(express.static("public"));
 app.use(bodyParser.urlencoded({ extended: true }));
 
 // Route to render the main page
 app.get("/", async (req, res) => {
+    
     try {
         const result = await db.query("SELECT * FROM book_notes ORDER BY rating DESC");
         console.log(result.rows);
