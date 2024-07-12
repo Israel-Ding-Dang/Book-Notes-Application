@@ -32,16 +32,13 @@ app.get("/", async (req, res) => {
             if (note.image) {                
                 note.image = note.image.toString('base64');
             }
-
             return note;
         });
 
-        res.render("index.ejs", { notes });  
-         
+        res.render("index.ejs", { notes });           
     } catch (error) {
         console.error("Error fetching book notes:", error);
     }
-
 });
 
 //Route to render the form for creating a new book note
