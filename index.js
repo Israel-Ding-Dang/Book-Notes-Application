@@ -43,7 +43,6 @@ app.get("/", async (req, res) => {
 
 //Route to render the form for creating a new book note
 app.get("/new", (req, res) => {
-
     res.render("modify.ejs", {
         heading: "New Book Entry",
         submit: "Create Book Note"
